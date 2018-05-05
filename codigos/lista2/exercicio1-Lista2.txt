@@ -1,0 +1,11 @@
+a) +, depois os comparadores relacionais (da esquerda pra direita) e o comparador lógico.
+b)(), dentro do parênteses os operadores aritméticos e então os comparadores matemáticos; depois a função e então o comparador lógico.
+c)(), dentro do parênteses os operadores aritméticos e então os comparadores matemáticos e os lógicos, então a função not pois está fora do parênteses.
+d)operadores matemáticos, e então so comparadores matemáticos seguido dos comparadores lógicos.
+e)comparador matemático e então o comparador lógico com o valor booleano "True".
+f)comparador matemático e então o comparador lógico com o valor booleano "False".
+g)ERRO. O sinal "=" não está definido. Não é possível fazer a "correção" pois não é possível saber se a intenção era diferente ("!=") ou igual ("==").
+h)comparador matemático e então o comparador lógico com o valor booleano "False".
+i)operadores matemáticos ("-") e então os comparadores matemáticos dentro dos parênteses, depois o compador lógico dentro do parênteses e pra finalizar o comparador lógico fora do parênteses.
+j)operadores matemáticos ("-") e então os comparadores matemáticos, depois os comparadores lógicos, da direita para a esquerda.
+k)ERRO. O not está negando um valor numérico, o que não é possível, ele deve sempre negar um valor booleano. Para consertar: k) 5 == 0 || not ( 5==0 ) resultado: False

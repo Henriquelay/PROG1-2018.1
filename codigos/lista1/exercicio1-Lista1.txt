@@ -1,0 +1,33 @@
+1)
+a)O operador MOD retorna o valor de resto da divisão de inteiros
+b)Verifica o resultado da operação e compara com outro valor, retorna um valor booleano.
+c)DIV -> Divisão inteira de 2 números. Segue a ordem de fatores da matemática.
+d)Retorna o valor absoluto do número.
+e)
+f)(Não retornou um número) calcula a raíz quadrada
+g)Pi é um valor válido real. Até 15 casas decimais.
+h)Também posso elevar usando ^
+i)Sen e cosseno também são entradas válidas
+j)Signum retorna o sinal numérico do número. 1 para positivo, -1 para negativo, 0 para neutro (zero).
+k)Dá ruim pq o / divide o 5 por 7. Embora dê resultado, a ordem de operação atrapalha o comando a ser concluído.
+l)Raíz de 3, depois multiplicado por 4
+m)Raíz de 3 multiplicado por 4 (doze). O parêntese altera totalmente a conta, assim como na matemática.
+n)O parêntese também pode indicar para aplicar alguma operação no resultado de algum conjunto de números.
+o)Também posso aplicar sinal negativo no primeiro número, como na matemática.
+p)Operações se possível podem ocorrer entre números inteiros e reais.
+q)Sem o parênteses, as contas seguem a ordem matemática.
+r)Algumas operações que resultam em números inteiros não operam com números reais (mod, div)
+s)Usando notação matemática correta, posso operar os comando "especiais" do ghci, como sqrt de um abs.
+t)"/" resulta em um número real, enquanto div resulta em um inteiro.
+u)Resulta em um inteiro.
+
+2) funções escritas > **, ^, ^^ > /, *  > +, - > ==, /=, >, >=, <, <= > && (e lógico computacional) > || (ou lógico computacional)
+
+3) Pois estavam aplicando a função a outra função fundamental. (o parêntese resolveu)
+
+5)
+	Associados a esquerda: *, /, +, -
+	Associados a direita: ^, &&, ||
+	Não associados:  div, mod, signum, abs, sqrt
+
+	Podem ser restritas ao int:
