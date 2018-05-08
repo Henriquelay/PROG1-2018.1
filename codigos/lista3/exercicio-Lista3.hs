@@ -42,4 +42,4 @@ pertAoCirculo (x,y) (cx,cy) r = if distP (x,y) (cx,cy) <= r
                                 else "Nao pertence ao circulo"
 
 {- distancia entre dois pontos qualquer -}
-distP (x1,y1) (x2,y2) = sqrt((x1-x2)**2 + (y1-y2)**2 )  
+distP (x1,y1) (x2,y2) = sqrt((x1-x2)**2 + (y1-y2)**2 ) 
