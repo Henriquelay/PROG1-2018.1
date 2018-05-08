@@ -35,3 +35,11 @@ abaixoDaReta (x,y) (xp1,yp1) (xp2,yp2) = y <= imagemNoX x (xp1,yp1) (xp2,yp2)
 {- Note que xP1 é a reta maior e portanto P está em maiúsculo -}
 entreAsRetas (x,y) (xP1,yP1) (xP2,yP2) (xp3,yp3) (xp4,yp4) = abaixoDaReta (x,y) (xP1,yP1) (xP2,yP2) && acimaDaReta (x,y) (xp3,yp3) (xp4,yp4)
 {- ---------------------------------------------------- -}
+
+{- questão 1 III -}
+pertAoCirculo (x,y) (cx,cy) r = if distP (x,y) (cx,cy) <= r
+                                then "Pertence ao circulo"
+                                else "Nao pertence ao circulo"
+
+{- distancia entre dois pontos qualquer -}
+distP (x1,y1) (x2,y2) = sqrt((x1-x2)**2 + (y1-y2)**2 ) 
