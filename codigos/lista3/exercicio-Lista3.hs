@@ -94,3 +94,25 @@ calcImc kg m
                 where imc = kg / (m)**2
 
 {- Questão 6 -}
+descontoNoIR reais
+                | reais < 500 = show ("0%, você é isento.")
+                | reais >= 500 && reais < 1500 = show ("10% de desconto no IR")
+                | reais >= 1500 && reais < 2500 = show ("15% de desconto no IR")
+                | reais >= 2500 = show("25% de desconto no IR")
+
+{- Questão 7 -}
+tipoTriang (x1,y1) (x2,y2) (x3,y3) = if aresta1 == aresta2 && aresta1 == aresta3
+                                        then show ("O triangulo e equilatro")
+                                        else if aresta1 == aresta2 || aresta1 == aresta3 || aresta2 == aresta3
+                                                then if hipo aresta1 aresta2 == aresta3 || hipo aresta1 aresta3 == aresta2 || hipo aresta2 aresta3 == aresta1
+                                                        then show ("O triangulo e retangulo e isosceles")
+                                                        else show ("O triangulo e isosceles")
+                                                else if hipo aresta1 aresta2 == aresta3 || hipo aresta1 aresta3 == aresta2 || hipo aresta2 aresta3 == aresta1
+                                                        then show ("O triangulo e retangulo")
+                                                        else show ("O triangulo nao tem relacao")
+
+                                        where  
+                                        hipo x y = sqrt(x**2+y**2)
+                                        aresta1 = distP (x1,y1) (x2,y2)
+                                        aresta2 = distP (x1,y1) (x3,y3)
+                                        aresta3 = distP (x2,y2) (x3,y3)
