@@ -1,7 +1,5 @@
 {- Definindo o tipo e o comportamento das minhas funções -}
 type Ponto = (Float, Float)
---type Stringfloat  (String, Float)
---distP2a2 :: Ponto -> Ponto -> Ponto -> String
 {- ----------------------------------------------------- -}
 
 {- questão 1 I -}
@@ -42,4 +40,18 @@ distP (x1,y1) (x2,y2) = sqrt((x1-x2)**2 + (y1-y2)**2 )
 {- --------------------------------------------------- -}
 
 {- Questão 2 -}
---distP2a2 (x1,y1) (x2,y2) (x3,y3) = show(("Pontos um e dois",distP (x1,y1) (x2,y2)) ++ ("Pontos um e tres",distP (x1,y1) (x3,y3)) ++ ("Pontos dois e tres",distP (x2,y2) (x3,y3)))
+dist3P2a2 (x1,y1) (x2,y2) (x3,y3) = "Ponto 1 e 2 = " ++ show (distP (x1,y1) (x2,y2)) ++ "; " ++
+                                    "Ponto 1 e 3 = " ++ show (distP (x1,y1) (x3,y3)) ++ "; " ++
+                                    "Ponto 2 e 3 = " ++ show (distP (x2,y2) (x3,y3))
+
+{- Questão 3 -}
+eq2Grau a b c = if delta a b c < 0
+                then error "O delta dessa equação é menor que 0!! Pelo menos uma raíz dela não pertence conjundo Real"
+                else if a == 0
+                    then error "Não me faça dividir por zero seu sacana! >:( Quer destruir o universo?!"
+                    else show ((baskharaPos a b c,baskharaNeg a b c))
+
+{- Delta e baskhara da eq quadratica -}
+delta a b c = b**b - (4*a*c)
+baskharaPos a b c = (-b+sqrt(delta a b c))/(2*a)
+baskharaNeg a b c = (-b-sqrt(delta a b c))/(2*a)
