@@ -7,7 +7,7 @@ pertAoRetangulo (x,y) (dx,dy) (ex,ey) = intervaloIn x dx ex && intervaloIn y dy 
 
 {- checa se o valor x está no intervalo incluso de a e b -}
 intervaloIn x a b = (x <= maior a b) && (x >= menor a b)
-intervaloEx x a b = (x < maior a b) && (x > menor a b)
+--intervaloEx x a b = (x < maior a b) && (x > menor a b)
 maior a b   
         | a >= b = a
         | b > a = b
@@ -45,13 +45,54 @@ dist3P2a2 (x1,y1) (x2,y2) (x3,y3) = "Ponto 1 e 2 = " ++ show (distP (x1,y1) (x2,
                                     "Ponto 2 e 3 = " ++ show (distP (x2,y2) (x3,y3))
 
 {- Questão 3 -}
-eq2Grau a b c = if delta a b c < 0
+eq2Grau a b c = if delta < 0
                 then error "O delta dessa equação é menor que 0!! Pelo menos uma raíz dela não pertence conjundo Real"
                 else if a == 0
                     then error "Não me faça dividir por zero seu sacana! >:( Quer destruir o universo?!"
-                    else show ((baskharaPos a b c,baskharaNeg a b c))
+                    else show ((baskharaPos,baskharaNeg))
+                        where
+                        {- Delta e baskhara da eq quadratica -}
+                                delta = b**b - (4*a*c)
+                                baskharaPos = (-b+sqrt(delta))/(2*a)
+                                baskharaNeg = (-b-sqrt(delta))/(2*a)
 
-{- Delta e baskhara da eq quadratica -}
-delta a b c = b**b - (4*a*c)
-baskharaPos a b c = (-b+sqrt(delta a b c))/(2*a)
-baskharaNeg a b c = (-b-sqrt(delta a b c))/(2*a)
+{- Questão 4 I -}
+relacao a b c
+                | a /= b && a /= c && b /= c = show ("Os tres numero sao diferentes entre si.")
+                | (a == b && a /= c)||(a /= b && a == c)||(b == c && b /= a) = show ("Apenas dois numeros sao iguais.")
+                | a == b && a == b = show ("Os tres numeros sao iguais")
+
+{- Questão 4 II -}
+quantasQuadRetangulo (sex,sey) (idx,idy) =     if primeiroQuad (sex,sey)
+                                                then if quartQuad (idx,idy)
+                                                        then show ("Ocupa 2 quadrantes")
+                                                        else show ("Ocupa 1 quadrante")
+                                                else if terceiroQuad (sex,sey)
+                                                        then if quartQuad (idx,idy)
+                                                                then show ("Ocupa 2 quadrantes")
+                                                                else show ("Ocupa 1 quadrante")
+                                                        else if segundoQuad (sex,sey)
+                                                                then if primeiroQuad (idx,idy)
+                                                                        then show ("Ocupa 2 quadrantes")
+                                                                        else if terceiroQuad (idx,idy)
+                                                                                then show ("Ocupa 2 quadrantes")
+                                                                                else if quartQuad (idx,idy)
+                                                                                        then show ("Ocupa 4 quadrantes")
+                                                                                        else show ("Ocupa 1 quadrante")
+                                                                else show ("Ocupa 1 quadrante")
+
+                                                where {- Pertinencias a quadrantes -}
+                                                        primeiroQuad (x,y) = x > 0 && y > 0
+                                                        segundoQuad (x,y) = x < 0 && y > 0
+                                                        terceiroQuad (x,y) = x < 0 && y < 0
+                                                        quartQuad (x,y) = x > 0 && y < 0
+
+{- Questão 5 -}
+calcImc kg m 
+        | imc >= 30 = "Obeso"
+        | imc >= 25 && imc < 30 = "Acima"
+        | imc > 18.5 && imc < 25 = "Normal"
+        | imc <= 18.5 = "Baixo"
+                where imc = kg / (m)**2
+
+{- Questão 6 -}
