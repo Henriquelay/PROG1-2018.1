@@ -116,3 +116,19 @@ tipoTriang (x1,y1) (x2,y2) (x3,y3) = if aresta1 == aresta2 && aresta1 == aresta3
                                         aresta1 = distP (x1,y1) (x2,y2)
                                         aresta2 = distP (x1,y1) (x3,y3)
                                         aresta3 = distP (x2,y2) (x3,y3)
+
+{- Questão 8 -}
+type Data = (Int,Int,Int)
+idade :: Data -> Data -> Int
+idade nasc atual = if second nasc > second atual
+                   then third atual - third nasc - 1
+                   else if first nasc > first atual
+                        then third atual - third nasc - 1
+                        else third atual - third nasc
+
+{- Definindo funções seletoras -}
+first (x,y,z) = x
+second (x,y,z) = y
+third (x,y,z) = z
+
+{- Questão 9 -}
