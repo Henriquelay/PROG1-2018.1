@@ -101,15 +101,16 @@ descontoNoIR reais
                 | reais >= 2500 = show("25% de desconto no IR")
 
 {- Questão 7 -}
+tipoTriang :: Ponto -> Ponto -> Ponto -> String
 tipoTriang (x1,y1) (x2,y2) (x3,y3) = if aresta1 == aresta2 && aresta1 == aresta3
-                                        then show ("O triangulo e equilatro")
+                                        then "O triangulo e equilatro"
                                         else if aresta1 == aresta2 || aresta1 == aresta3 || aresta2 == aresta3
                                                 then if hipo aresta1 aresta2 == aresta3 || hipo aresta1 aresta3 == aresta2 || hipo aresta2 aresta3 == aresta1
-                                                        then show ("O triangulo e retangulo e isosceles")
-                                                        else show ("O triangulo e isosceles")
+                                                        then "O triangulo e retangulo e isosceles"
+                                                        else "O triangulo e isosceles"
                                                 else if hipo aresta1 aresta2 == aresta3 || hipo aresta1 aresta3 == aresta2 || hipo aresta2 aresta3 == aresta1
-                                                        then show ("O triangulo e retangulo")
-                                                        else show ("O triangulo nao tem relacao")
+                                                        then "O triangulo e retangulo"
+                                                        else "O triangulo nao tem relacao"
 
                                         where  
                                         hipo x y = sqrt(x**2+y**2)
@@ -132,3 +133,32 @@ second (x,y,z) = y
 third (x,y,z) = z
 
 {- Questão 9 -}
+type PontoInt = (Int,Int)
+movBispo :: PontoInt -> Char
+movBispo (x,y)
+        | x > 8 || y > 8 = '0'
+        | x == 8 = 'E'
+        | x == 1 = 'D'
+        | otherwise = {- 'D' ++ 'E' -} error "O bispo se move em mais de uma direção. Não posso responder usando o tipo Char usando somente 'D' e 'E'."
+
+{- Questão 10 -}
+idadePlaneta :: Float -> String -> Float
+idadePlaneta seg planeta
+                        | planeta == "Terra" = idadeTerra
+                        | planeta == "Mercúrio" = idadeMercurio
+                        | planeta == "Vênus" = idadeVenus
+                        | planeta == "Marte" = idadeMarte
+                        | planeta == "Júpiter" = idadeJupiter
+                        | planeta == "Saturno" = idadeSaturno
+                        | planeta == "Urano" = idadeUrano
+                        | planeta == "Netuno" = idadeNetuno
+
+                        where
+                        idadeTerra = seg / 31557600                              -- = (365.25*24*60*60)
+                        idadeMercurio = idadeTerra * 2408467 * (10**(-7))      -- = 0.2408467 
+                        idadeVenus = idadeTerra * 61519726 * (10**(-8))        -- = 0.61519726
+                        idadeMarte = idadeTerra * 18808158 * (10**(-7))         -- = 1.8808158 
+                        idadeJupiter = idadeTerra * 11862615 * (10**(-6))       -- = 11.862615  
+                        idadeSaturno = idadeTerra * 29447498 * (10**(-6))       -- = 29.447498  
+                        idadeUrano = idadeTerra * 84016846 * (10**(-6))         -- = 84.016846
+                        idadeNetuno = idadeTerra * 16479132 * (10**(-5))         -- = 164.79132
