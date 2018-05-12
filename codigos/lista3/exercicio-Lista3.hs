@@ -136,7 +136,7 @@ third (x,y,z) = z
 type PontoInt = (Int,Int)
 movBispo :: PontoInt -> Char
 movBispo (x,y)
-        | x > 8 || y > 8 = '0'
+        | x > 8 || y > 8 = '0' 
         | x == 8 = 'E'
         | x == 1 = 'D'
         | otherwise = {- 'D' ++ 'E' -} error "O bispo se move em mais de uma direção. Não posso responder usando o tipo Char usando somente 'D' e 'E'."
