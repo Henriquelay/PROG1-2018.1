@@ -26,6 +26,13 @@ diasSemana = ["domingo","segunda-feira","terça-feira","quarta-feira","quinta-fe
 listaDisciplinas = ["calculo 1","algebra linear","programacao 1","introducao a computacao","aspectos teoricos da computacao"]
 {- Item 2 -}
 f x r t = [x, x + r .. t]
+
+
+
+
+
+
+
 {- Módulos -}
 menor x
     | head x <= last x = head x
@@ -42,6 +49,7 @@ menorLista x =  if length x > 0
                 else error "Por favor entre uma lista nao nula"  
 
 maioremenor xs = (maior xs,menor xs)
+
 
 --metades xs = (take (div ((length xs) 2) xs),drop (div ((length xs) 2) xs)) 
 
