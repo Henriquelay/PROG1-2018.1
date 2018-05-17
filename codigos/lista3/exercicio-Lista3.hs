@@ -42,4 +42,4 @@ distP (x1,y1) (x2,y2) = sqrt((x1-x2)**2 + (y1-y2)**2 )
 {- --------------------------------------------------- -}
 
 {- Questão 2 -}
---distP2a2 (x1,y1) (x2,y2) (x3,y3) = show(("Pontos um e dois",distP (x1,y1) (x2,y2)) ++ ("Pontos um e tres",distP (x1,y1) (x3,y3)) ++ ("Pontos dois e tres",distP (x2,y2) (x3,y3)))
+distP2a2 (x1,y1) (x2,y2) (x3,y3) = show(("Pontos um e dois",distP (x1,y1) (x2,y2))) ++ show(("Pontos um e tres",distP (x1,y1) (x3,y3))) ++ show(("Pontos dois e tres",distP (x2,y2) (x3,y3)))
