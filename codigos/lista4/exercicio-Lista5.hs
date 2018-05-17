@@ -43,5 +43,5 @@ menorLista x =  if length x > 0
 
 maioremenor xs = (maior xs,menor xs)
 
-metades xs = (take (div ((length xs) 2) xs),drop (div ((length xs) 2) xs)) 
+--metades xs = (take (div ((length xs) 2) xs),drop (div ((length xs) 2) xs)) 
 
