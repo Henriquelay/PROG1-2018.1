@@ -27,13 +27,12 @@ listaDisciplinas = ["calculo 1","algebra linear","programacao 1","introducao a c
 {- Item 2 -}
 f x r t = [x, x + r .. t]
 
-
-
-
-
-
-
-{- Módulos -}
+{- Item 3 -}
+{- a -} {- Dada que a lista é não infinita -}
+menorLista x =  if length x > 0 
+                then menor x 
+                else error "Por favor entre uma lista nao nula"  
+{- Módulos (podem ser uteis depois) -}
 menor x
     | head x <= last x = head x
     | head x > last x = last x
@@ -42,14 +41,17 @@ maior x
     | head x >= last x = head x
     | head x < last x = last x
 {- ------------------------------------ -}
-{- Item 3 -}
-{- a -} {- Dada que a lista é não infinita -}
-menorLista x =  if length x > 0 
-                then menor x 
-                else error "Por favor entre uma lista nao nula"  
 
+{- b -}
 maioremenor xs = (maior xs,menor xs)
 
+{- c -}
+multiplos n lim = [n*1,n*2..lim]
+--ERROR-- multiplosAlternativo n lim = [x*n|x<-[0,1..],x <= lim]
 
---metades xs = (take (div ((length xs) 2) xs),drop (div ((length xs) 2) xs)) 
+{- d -}
+metades xs = (take (metadeDaListaInt xs) xs,drop (metadeDaListaInt xs) xs)
+{- Módulo (pode ser útil futuramente) -}
+metadeDaListaInt xs = div(length xs) 2
+{- ---------------------------------- -}
 
