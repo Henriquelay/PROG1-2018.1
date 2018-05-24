@@ -55,3 +55,5 @@ metades xs = (take (metadeDaListaInt xs) xs,drop (metadeDaListaInt xs) xs)
 metadeDaListaInt xs = div(length xs) 2
 {- ---------------------------------- -}
 
+{- e -}
+duplica xs = [ n | [xs,xs]]
