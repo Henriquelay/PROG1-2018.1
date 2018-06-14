@@ -56,4 +56,4 @@ metadeDaListaInt xs = div(length xs) 2
 {- ---------------------------------- -}
 
 {- e -}
-duplica xs = [ n | [xs,xs]]
+duplica xs = [ xs!!div n 2 | n <- [0..2*(length xs)-1]]
