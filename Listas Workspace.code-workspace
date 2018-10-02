@@ -1,7 +1,10 @@
 {
 	"folders": [
 		{
-			"path": "."
+			"path": "/home/henriquelay/UFES/UFES_PROG2/prog2-c"
+		},
+		{
+			"path": "prog1-haskell"
 		}
 	],
 	"settings": {}
